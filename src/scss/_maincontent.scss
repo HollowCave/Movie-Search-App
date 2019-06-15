@@ -1,0 +1,85 @@
+section .hero-img-container {
+  width: 100vw;
+  height: 60vh;
+}
+
+#hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: $button-color;
+}
+
+button:focus {outline:0;}
+
+.main-carousel-one {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.main-carousel-two {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-wrapper {
+  width: 1074px;
+  overflow: hidden; 
+}
+
+ul.carousel {
+  display: flex;
+  width: 4340px;
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+  transition: all .5s ease-out;
+}
+
+.carousel-item {
+  height: 300px;
+  width: 200px;
+  margin-right: 16px;
+  color: #ffffff;
+  border: 1px solid $title-color;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctrl1, .ctrl2 {
+  position: absolute;
+  top: 48%;
+  width: 1200px;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+  margin-top: 5em;
+  border-top: 1px solid $button-color;
+}

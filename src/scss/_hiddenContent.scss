@@ -1,0 +1,57 @@
+.hidden-content {
+  display: none;
+  background-color: $background-color;
+  border: 2px solid $title-color;
+  height: 22.5vh;
+  width: 70vw;
+  margin: 5px auto 0 auto;
+}
+
+.hidden-content2 {
+  display: none;
+  background-color: $background-color;
+  border: 2px solid $title-color;
+  height: 22.5vh;
+  width: 70vw;
+  margin: 5px auto 0 auto;
+}
+
+.show {
+  display: block;
+}
+
+.movie-details {
+  display: inline-flex;
+}
+
+.movie-poster {
+  height: 165px;
+  width: 302px;
+  background-color: $background-color;
+}
+
+.details-wrapper {
+  position: relative;
+  margin-top: 1em;
+}
+
+.movie-name, .runTime {
+  color: #ffffff;
+}
+
+.description {
+  width: 600px;
+  margin: 1em;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.title {
+  color: $button-color;
+  font-size: 20px;
+}
+
+.misc-details {
+  display: flex;
+  justify-content: space-evenly;
+}
