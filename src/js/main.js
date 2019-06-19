@@ -14,7 +14,7 @@ const controlResult = async () => {
   // Get results first page
   const query = '1';
 
-  if(query) {
+  if(query && document.URL.includes("index.html")) {
     // Get first page and add to state
     state.result = new Result(query);
 
@@ -25,7 +25,7 @@ const controlResult = async () => {
     // Display the results
     displayData.showResults(state.result.result);
     displayData.topResults(state.result.topResults);
-    console.log(state.result.result);
+    // console.log(state.result.result);
     } catch (error) {
       alert('Somethings wrong has happened!');
     }
@@ -50,6 +50,7 @@ const controlMovie = async () => {
 
   if (id) {
     // Prepare the UI for changes
+
     viewMovie.clearMovie();
     // Create new movie object
     state.movie = new Movie(id);
@@ -57,8 +58,8 @@ const controlMovie = async () => {
     try {
       // Get movie data
     await state.movie.getMovie();
+    
     // render movie page
-    viewMovie.showThatMovie();
     viewMovie.displayMovie(state.movie);
     viewMovie.displayTopMovie(state.movie);
 
@@ -66,12 +67,14 @@ const controlMovie = async () => {
       alert('Error processing movie!');
     }  
   }
+  // Show selected(clicked) movie
+  viewMovie.showThatMovie();
 };
 
 // window.addEventListener('hashchange', controlMovie);
 // window.addEventListener('load', controlMovie);
 // ABOVE SAME AS BELOW
-['hashchange', 'load'].forEach(event => window.addEventListener(event, controlMovie));
+ ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlMovie));
 
 
 

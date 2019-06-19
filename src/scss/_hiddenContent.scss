@@ -1,27 +1,40 @@
 .hidden-content {
-  display: none;
   background-color: $background-color;
-  border: 2px solid $title-color;
-  height: 22.5vh;
+  border: 0px solid $title-color;
+  height: 0;
   width: 70vw;
-  margin: 5px auto 0 auto;
+  margin: 0 auto 0 auto;
+  transition: all 1s ease-out;
 }
 
 .hidden-content2 {
-  display: none;
   background-color: $background-color;
+  border: 0px solid $title-color;
+  height: 0;
+  width: 70vw;
+  margin: 0 auto 0 auto;
+  transition: all 1s ease-out;
+}
+
+.show {
   border: 2px solid $title-color;
   height: 22.5vh;
   width: 70vw;
   margin: 5px auto 0 auto;
+  transition: all 1s ease-out;
 }
 
-.show {
-  display: block;
+.fadeIn {
+  opacity: 1 !important;
+  transition: opacity 1s 1s ease-out;
 }
 
-.movie-details {
+.movie-details1, .movie-details2 {
+  position: absolute;
+  left: 14.65%;
   display: inline-flex;
+  opacity: 0;
+  transition: opacity 1s ease-out;
 }
 
 .movie-poster {
@@ -33,6 +46,10 @@
 .details-wrapper {
   position: relative;
   margin-top: 1em;
+}
+
+.movie-name {
+  text-transform: uppercase;
 }
 
 .movie-name, .runTime {
@@ -54,4 +71,32 @@
 .misc-details {
   display: flex;
   justify-content: space-evenly;
+}
+
+.favorite {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.icon-swap:hover #unfavorited,
+.icon-swap #favorited {
+    display: none;
+}
+.icon-swap:hover #favorited {
+    display: inline;
+}
+
+.watchlist {
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.icon-swap:hover #unwatch,
+.icon-swap #watch {
+    display: none;
+}
+.icon-swap:hover #watch {
+    display: inline;
 }

@@ -3,7 +3,7 @@ import { elements } from './base';
 export const showResult = movie => {
   const markup = `
     <li class="carousel-item">
-      <a class="movie-link" href="?#${movie.id}">
+      <a class="movie-link" href="#${movie.id}">
         <figure class="img-result">
           <img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title}">
         </figure>

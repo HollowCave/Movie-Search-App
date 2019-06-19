@@ -32,6 +32,11 @@
   margin: 0 2em;
 }
 
+.link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .nav-link:hover {
   color: $button-color;
   cursor: pointer;
