@@ -1,0 +1,117 @@
+.main-image {
+  position: relative;
+}
+
+section .hero-img-container {
+  width: 100vw;
+  height: 80vh;
+}
+
+.movie-fan-title {
+  position: absolute;
+  top: 8%;
+  width: 100%;
+  text-align: center;
+}
+
+.movie-fan-title h1 {
+  text-transform: uppercase;
+  font-size: 55px;
+  color: $button-color;
+  margin-bottom: 0;
+}
+
+.movie-fan-title h3 {
+  margin-top: 5px;
+  color: $button-color;
+}
+
+#hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+}
+
+figure {
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 70px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: $button-color;
+}
+
+button:focus {outline:0;}
+
+.main-carousel-one {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.main-carousel-two {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.carousel-wrapper {
+  width: 1074px;
+  overflow: hidden; 
+  z-index: 2;
+}
+
+ul.carousel {
+  display: flex;
+  width: 4340px;
+  list-style: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+  transition: all .5s ease-out;
+}
+
+.carousel-item {
+  height: 300px;
+  width: 200px;
+  margin-right: 16px;
+  color: #ffffff;
+  border: 1px solid $title-color;
+}
+
+.carousel-item:hover {
+  background-color: $background-color;
+  opacity: .5;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ctrl1, .ctrl2 {
+  position: absolute;
+  top: 48%;
+  width: 1200px;
+  z-index: -1;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 10vh;
+  margin-top: 5em;
+  border-top: 1px solid $button-color;
+}
