@@ -4,7 +4,7 @@
   height: 0;
   width: 70vw;
   margin: 0 auto 0 auto;
-  transition: all 1s ease-out;
+  transition: all .5s ease-out;
 }
 
 .hidden-content2 {
@@ -13,7 +13,7 @@
   height: 0;
   width: 70vw;
   margin: 0 auto 0 auto;
-  transition: all 1s ease-out;
+  transition: all .5s ease-out;
 }
 
 .show {
@@ -21,7 +21,7 @@
   height: 22.5vh;
   width: 70vw;
   margin: 5px auto 0 auto;
-  transition: all 1s ease-out;
+  transition: all .5s ease-out;
 }
 
 .fadeIn {
@@ -79,13 +79,9 @@
   cursor: pointer;
 }
 
-.icon-swap:hover #unfavorited,
-.icon-swap #favorited {
-    display: none;
-}
-.icon-swap:hover #favorited {
-    display: inline;
-}
+ .icon-swap #favorited, .icon-swap #favorited2 {
+     display: none;
+ }
 
 .watchlist {
   color: #ffffff;
@@ -93,10 +89,6 @@
   cursor: pointer;
 }
 
-.icon-swap:hover #unwatch,
 .icon-swap #watch {
     display: none;
-}
-.icon-swap:hover #watch {
-    display: inline;
 }

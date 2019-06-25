@@ -50,8 +50,13 @@ export const displayMovie = movie => {
         <div class="misc-details">
           <span class="movie-name"><span class="title">Title:</span> ${movie.title}</span>
           <span class="runTime"><span class="title">RunTime:</span> ${movie.runtime}min</span>
+
+          <button class="favorite">
           <span class="favorite"><a title="favorite" class="icon-swap"><i id="unfavorited" class="far fa-heart"></i><i id="favorited" class="fas fa-heart"></i></a></span>
+          </button>
+          
           <span class="watchlist"><a title="watchlist" class="icon-swap"><i id="unwatch" class="far fa-eye"></i><i id="watch" class="fas fa-eye"></i></a></span>
+
         </div>
         <p class="description">
           ${movie.description}
@@ -72,7 +77,9 @@ export const displayTopMovie = movie => {
         <div class="misc-details">
           <span class="movie-name"><span class="title">Title:</span> ${movie.title}</span>
           <span class="runTime"><span class="title">RunTime:</span> ${movie.runtime}min</span>
-          <span class="favorite"><a title="favorite" class="icon-swap"><i id="unfavorited" class="far fa-heart"></i><i id="favorited" class="fas fa-heart"></i></a></span>
+          <button class="favorite">
+          <span class="favorite"><a title="favorite" class="icon-swap"><i id="unfavorited2" class="far fa-heart"></i><i id="favorited2" class="fas fa-heart"></i></a></span>
+          </button>
           <span class="watchlist"><a title="watchlist" class="icon-swap"><i id="unwatch" class="far fa-eye"></i></i><i id="watch" class="fas fa-eye"></i></a></span>
         </div>
         <p class="description">

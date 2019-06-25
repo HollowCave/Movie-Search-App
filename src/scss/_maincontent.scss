@@ -1,6 +1,29 @@
+.main-image {
+  position: relative;
+}
+
 section .hero-img-container {
   width: 100vw;
-  height: 60vh;
+  height: 80vh;
+}
+
+.movie-fan-title {
+  position: absolute;
+  top: 8%;
+  width: 100%;
+  text-align: center;
+}
+
+.movie-fan-title h1 {
+  text-transform: uppercase;
+  font-size: 55px;
+  color: $button-color;
+  margin-bottom: 0;
+}
+
+.movie-fan-title h3 {
+  margin-top: 5px;
+  color: $button-color;
 }
 
 #hero {
