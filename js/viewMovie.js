@@ -6,41 +6,52 @@ export const clearMovie = () => {
 }
 
 export const showThatMovie = () => {
-  let movieLink = document.querySelector('.carousel1'),
-      topMovieLink = document.querySelector('.carousel2');
-      
 
-  movieLink.addEventListener('click', (e) => {
+      document.addEventListener('click', e => {
+        let click = e.target;
 
-      elements.topMovie.classList.remove('show');
-      elements.movie.classList.add('show');
 
-      if (elements.movie.matches('.show')) {
-        window.setTimeout(() => {
-          let movieDetails1 = document.querySelector('.movie-details1');
-        
+        // In theatres
+        if (click.matches('.current1')) {
+          elements.topMovie.classList.remove('show');
+          elements.movie.classList.add('show');
+
+        if (elements.movie.matches('.show')) {
+              window.setTimeout(() => {
+              let movieDetails1 = document.querySelector('.movie-details1');    
           
-          movieDetails1.classList.add('fadeIn');
-        }, 100);
-      }
-  });
+              movieDetails1.classList.add('fadeIn');
+            }, 100);
+          }
+        }
 
-  topMovieLink.addEventListener('click', (e) => {
+        // Top Movies
+        if (click.matches('.current2')) {
+          elements.movie.classList.remove('show');
+          elements.topMovie.classList.add('show');
+    
+          if (elements.topMovie.matches('.show')) {
+            window.setTimeout(() => {
+              let movieDetails2 = document.querySelector('.movie-details2');
+              
+              movieDetails2.classList.add('fadeIn');
+            }, 100);
+          }
+        }
 
-      elements.movie.classList.remove('show');
-      elements.topMovie.classList.add('show');
-
-      if (elements.topMovie.matches('.show')) {
-        window.setTimeout(() => {
-          let movieDetails2 = document.querySelector('.movie-details2');
-          
-          movieDetails2.classList.add('fadeIn');
-        }, 100);
-      }
-  });
+      });
 }
 
-export const displayMovie = movie => {
+export const highlightSelected = id => {
+  const resultsArr = Array.from(document.querySelectorAll('.movie-link'));
+  resultsArr.forEach(el => {
+    el.classList.remove('active');
+  }); 
+
+  document.querySelector(`a[href="#${id}"]`).classList.add('active');
+}
+
+export const displayMovie = (movie, isFavorite) => {
   const markup = `
     <div class="movie-details1">
       <figure class="movie-poster">
@@ -51,10 +62,12 @@ export const displayMovie = movie => {
           <span class="movie-name"><span class="title">Title:</span> ${movie.title}</span>
           <span class="runTime"><span class="title">RunTime:</span> ${movie.runtime}min</span>
 
-          <button class="favorite">
-          <span class="favorite"><a title="favorite" class="icon-swap"><i id="unfavorited" class="far fa-heart"></i><i id="favorited" class="fas fa-heart"></i></a></span>
+          <button class="movie-like">
+            <svg class="header-likes">
+              <use href="img/icons.svg#icon-heart${isFavorite ? '' : '-outlined'}"></use>
+            </svg>
           </button>
-          
+
           <span class="watchlist"><a title="watchlist" class="icon-swap"><i id="unwatch" class="far fa-eye"></i><i id="watch" class="fas fa-eye"></i></a></span>
 
         </div>
@@ -77,9 +90,13 @@ export const displayTopMovie = movie => {
         <div class="misc-details">
           <span class="movie-name"><span class="title">Title:</span> ${movie.title}</span>
           <span class="runTime"><span class="title">RunTime:</span> ${movie.runtime}min</span>
-          <button class="favorite">
-          <span class="favorite"><a title="favorite" class="icon-swap"><i id="unfavorited2" class="far fa-heart"></i><i id="favorited2" class="fas fa-heart"></i></a></span>
+
+          <button class="movie-like">
+            <svg class="header-likes">
+              <use href="img/icons.svg#icon-heart-outlined"></use>
+            </svg>
           </button>
+          
           <span class="watchlist"><a title="watchlist" class="icon-swap"><i id="unwatch" class="far fa-eye"></i></i><i id="watch" class="fas fa-eye"></i></a></span>
         </div>
         <p class="description">

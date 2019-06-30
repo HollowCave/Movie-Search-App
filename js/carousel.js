@@ -1,6 +1,6 @@
 let carousel1 = document.querySelector('.carousel1'),
     carousel2 = document.querySelector('.carousel2'), 
-    distToMove = 218,
+    distToMove = 216,
     current1 = 0,
     current2 = 0;
 

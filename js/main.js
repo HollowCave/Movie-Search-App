@@ -5,6 +5,7 @@ import * as displayData from './displayData';
 import * as viewMovie from './viewMovie';
 import { elements } from './base';
 import Favorites from './favWatch';
+import { toggleFavButton } from './favWatch';
 
 // Global State of the App
 const state = {};
@@ -16,7 +17,10 @@ const controlResult = async () => {
   // Get results first page
   const query = '1';
 
-  if(query) {
+  const pathName = window.location.pathname;
+  console.log(pathName);
+
+  if(query && pathName === '/index.html') {
     // Get first page and add to state
     state.result = new Result(query);
 
@@ -52,8 +56,12 @@ const controlMovie = async () => {
 
   if (id) {
     // Prepare the UI for changes
-    viewMovie.showThatMovie();
     viewMovie.clearMovie();
+    viewMovie.showThatMovie();
+
+     // Highlight the selected movie
+    //  viewMovie.highlightSelected(id);
+
     // Create new movie object
     state.movie = new Movie(id);
 
@@ -62,25 +70,27 @@ const controlMovie = async () => {
     await state.movie.getMovie();
     
     // render movie page
-    viewMovie.displayMovie(state.movie);
+    viewMovie.displayMovie(state.movie, state.favorites.isFavorite(id));
     viewMovie.displayTopMovie(state.movie);
       
     } catch (error) {
+      console.log(error);
       alert('Error processing movie!');
     }  
   }
-  // Show selected(clicked) movie
   
 };
 
 // window.addEventListener('hashchange', controlMovie);
-// window.addEventListener('load', controlMovie);
-// ABOVE SAME AS BELOW
- ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlMovie));
+// document.addEventListener('load', controlMovie);
+// ABOVE almost SAME AS BELOW
+  ['hashchange', 'DOMContentLoaded', 'load'].forEach(event => window.addEventListener(event, controlMovie));
 
 /*
   * FAVORITE RESULTS CONTROLLER
 */
+state.favorites = new Favorites();
+
 const controlFavorite = () => {
   if(!state.favorites) state.favorites = new Favorites();
   const currentID = state.movie.id;
@@ -95,6 +105,7 @@ const controlFavorite = () => {
     );
 
     // Toggle the favorite button
+    toggleFavButton(true);
 
     // Add favorite to the UI list
     console.log(state.favorites);
@@ -105,6 +116,7 @@ const controlFavorite = () => {
      state.favorites.deleteFavorite(currentID);
 
     // Toggle the favorite button
+    toggleFavButton(false);
 
     // Remove favorite from the UI list
     console.log(state.favorites);
@@ -112,26 +124,19 @@ const controlFavorite = () => {
   };
 };
 
-elements.movie.addEventListener('click', e => {
-  // Add to favorites list
-  if(e.target.matches('.favorite, .favorite *')) {
-    document.getElementById('unfavorited').style.display = 'none';
-    document.getElementById('favorited').style.display = 'inline';
-    // Favorite controller
+window.addEventListener('load', () => {
+  state.favorites = new Favorites();
+
+  state.favorites.readStorage();
+});
+
+// Handle Button CLicks
+window.addEventListener('click', e => {
+  if (e.target.matches('.movie-like, .movie-like *')) {
+    // Favorites controller
     controlFavorite();
   }
 });
-
-elements.topMovie.addEventListener('click', e => {
-  // Add to favorites list
-  if(e.target.matches('.favorite, .favorite *')) {
-    document.getElementById('unfavorited2').style.display = 'none';
-    document.getElementById('favorited2').style.display = 'inline';
-    // Favorite controller
-    controlFavorite();
-  }
-});
-
 
 
 
