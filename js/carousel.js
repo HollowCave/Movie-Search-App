@@ -10,7 +10,7 @@ let carousel1 = document.querySelector('.carousel1'),
 export const carouselButtons = () => {
   document.addEventListener('click', function (event) {
 
-      if (event.target.matches('.right1') && current1 < 3270) {
+      if (event.target.matches('.right1') && current1 < 3058) {
         current1 += distToMove;
         carousel1.style.transform = `translateX(-${current1}px)`
       } 
@@ -20,7 +20,7 @@ export const carouselButtons = () => {
         carousel1.style.transform = `translateX(-${current1}px)`
       }
 
-      if (event.target.matches('.right2') && current2 < 3270) {
+      if (event.target.matches('.right2') && current2 < 3058) {
         current2 += distToMove;
         carousel2.style.transform = `translateX(-${current2}px)`
       }

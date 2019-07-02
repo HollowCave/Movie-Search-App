@@ -4,7 +4,8 @@
 
 section .hero-img-container {
   width: 100vw;
-  height: 80vh;
+  height: 45vh;
+  opacity: .4;
 }
 
 .movie-fan-title {
@@ -39,7 +40,7 @@ figure {
   margin: 0;
 }
 
-.carousel-button {
+button {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -48,11 +49,11 @@ figure {
   cursor: pointer;
 }
 
-.carousel-button:hover {
+button:hover {
   color: $button-color;
 }
 
-.carousel-button:focus {outline:0;}
+button:focus {outline:0;}
 
 .main-carousel-one {
   position: relative;

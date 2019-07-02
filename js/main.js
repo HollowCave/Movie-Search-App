@@ -17,10 +17,7 @@ const controlResult = async () => {
   // Get results first page
   const query = '1';
 
-  const pathName = window.location.pathname;
-  console.log(pathName);
-
-  if(query && pathName === '/index.html') {
+  if(query) {
     // Get first page and add to state
     state.result = new Result(query);
 
@@ -54,7 +51,10 @@ const controlMovie = async () => {
   // Get ID from url
   const id = window.location.hash.replace('#', '');
 
-  if (id) {
+  const pathName = window.location.pathname;
+  console.log(window.location);
+
+  if (id || pathName === '/index.html') {
     // Prepare the UI for changes
     viewMovie.clearMovie();
     viewMovie.showThatMovie();
