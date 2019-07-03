@@ -21,7 +21,7 @@ export const showThatMovie = () => {
               let movieDetails1 = document.querySelector('.movie-details1');    
           
               movieDetails1.classList.add('fadeIn');
-            }, 100);
+            }, 200);
           }
         }
 
@@ -35,7 +35,7 @@ export const showThatMovie = () => {
               let movieDetails2 = document.querySelector('.movie-details2');
               
               movieDetails2.classList.add('fadeIn');
-            }, 100);
+            }, 200);
           }
         }
 

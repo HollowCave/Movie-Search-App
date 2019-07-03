@@ -5,7 +5,7 @@ import * as displayData from './displayData';
 import * as viewMovie from './viewMovie';
 import { elements } from './base';
 import Favorites from './favWatch';
-import { toggleFavButton } from './favWatch';
+import { toggleFavButton, toggleMenu } from './favWatch';
 
 // Global State of the App
 const state = {};
@@ -52,7 +52,7 @@ const controlMovie = async () => {
   const id = window.location.hash.replace('#', '');
 
   const pathName = window.location.pathname;
-  console.log(window.location);
+  // console.log(window.location);
 
   if (id || pathName === '/index.html') {
     // Prepare the UI for changes
@@ -124,11 +124,21 @@ const controlFavorite = () => {
   };
 };
 
+// FavWatch Page
+toggleMenu();
+
+// Build favorites and watchlist
 window.addEventListener('load', () => {
   state.favorites = new Favorites();
 
+  // Restore favorites
   state.favorites.readStorage();
+
+  // Render Favorites
+  // state.favorites.favorites.forEach(favorite => favView.renderFavorites(favorite));
 });
+
+
 
 // Handle Button CLicks
 window.addEventListener('click', e => {

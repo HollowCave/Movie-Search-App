@@ -1,11 +1,34 @@
 import { elements } from './base';
 
+export const toggleMenu = () => {
+  window.addEventListener('click', e => {
+    let click = e.target,
+        favoritePage = document.querySelector('.favorite-page'),
+        watchPage = document.querySelector('.watch-page');
+
+    if (click.matches('.favorite-page-btn')) {
+      watchPage.classList.remove('display');
+      favoritePage.classList.add('display');
+    }
+
+    if (click.matches('.watch-page-btn')) {
+      favoritePage.classList.remove('display');
+      watchPage.classList.add('display');
+    }
+
+  });
+}
+
 export const toggleFavButton = isFavorite => {
   const iconString = isFavorite ? 'icon-heart' : 'icon-heart-outlined'; 
 
   document.querySelector('.movie-like use').setAttribute('href', `img/icons.svg#${iconString}`);
 
 };
+
+export const buildFavoritesMenu = numFavorites => {
+  
+}
 
 export default class Favorites {
    constructor() {
