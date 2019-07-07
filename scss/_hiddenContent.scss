@@ -73,7 +73,10 @@
   justify-content: space-evenly;
 }
 
-.movie-like {
+.movie-like, .movie-watch {
+  color: #fff;
+  padding: 0;
+  background-color: transparent;
   border: none;
   cursor: pointer;
   height: 2rem;
@@ -82,7 +85,7 @@
   display: flex;
 }
 
-.movie-like:hover {
+.movie-like:hover, .movie-watch:hover {
     transform: scale(1.07); 
   }
 
@@ -90,18 +93,15 @@
     outline: none; 
 }
   
-.movie-like svg {
+.movie-like svg, .movie-watch a i {
     height: 2rem;
     width: 2rem;
     fill: #fff; 
+    font-size: 30px;
   }
 
 .watchlist {
   color: #ffffff;
   font-size: 24px;
   cursor: pointer;
-}
-
-.icon-swap #watch {
-    display: none;
 }
