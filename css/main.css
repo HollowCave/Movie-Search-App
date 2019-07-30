@@ -40,7 +40,8 @@
 
 section .hero-img-container {
   width: 100vw;
-  height: 80vh; }
+  height: 45vh;
+  opacity: .4; }
 
 .movie-fan-title {
   position: absolute;
@@ -52,11 +53,13 @@ section .hero-img-container {
   text-transform: uppercase;
   font-size: 55px;
   color: #86C232;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 .movie-fan-title h3 {
   margin-top: 5px;
-  color: #86C232; }
+  color: #86C232;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
 
 #hero {
   width: 100%;
@@ -67,7 +70,7 @@ section .hero-img-container {
 figure {
   margin: 0; }
 
-button {
+.left1, .right1, .left2, .right2, .favorite-btn, .watch-btn {
   padding: 0;
   background-color: transparent;
   border: none;
@@ -81,13 +84,13 @@ button:hover {
 button:focus {
   outline: 0; }
 
-.main-carousel-one {
+.main-carousel-one, .tv-main-carousel-one {
   position: relative;
   display: flex;
   justify-content: center;
   z-index: 1; }
 
-.main-carousel-two {
+.main-carousel-two, .tv-main-carousel-two {
   position: relative;
   display: flex;
   justify-content: center;
@@ -108,10 +111,14 @@ ul.carousel {
 
 .carousel-item {
   height: 300px;
-  width: 200px;
+  width: 202px;
   margin-right: 16px;
-  color: #ffffff;
-  border: 1px solid #61892F; }
+  color: #ffffff; }
+
+.active {
+  background-color: #222629;
+  opacity: .5;
+  border: 1px solid transparent; }
 
 .carousel-item:hover {
   background-color: #222629;
@@ -136,15 +143,11 @@ ul.carousel {
   margin-top: 5em;
   border-top: 1px solid #86C232; }
 
-.hidden-content {
-  background-color: #222629;
-  border: 0px solid #61892F;
-  height: 0;
-  width: 70vw;
-  margin: 0 auto 0 auto;
-  transition: all .5s ease-out; }
+@media (max-width: 668px) {
+  .carousel-wrapper {
+    width: 55%; } }
 
-.hidden-content2 {
+.hidden-content, .hidden-content2, .tv-hidden-content, .hidden-content2 {
   background-color: #222629;
   border: 0px solid #61892F;
   height: 0;
@@ -153,9 +156,10 @@ ul.carousel {
   transition: all .5s ease-out; }
 
 .show {
+  position: relative;
   border: 2px solid #61892F;
   height: 22.5vh;
-  width: 70vw;
+  width: 1060px;
   margin: 5px auto 0 auto;
   transition: all .5s ease-out; }
 
@@ -165,7 +169,6 @@ ul.carousel {
 
 .movie-details1, .movie-details2 {
   position: absolute;
-  left: 14.65%;
   display: inline-flex;
   opacity: 0;
   transition: opacity 1s ease-out; }
@@ -186,7 +189,7 @@ ul.carousel {
   color: #ffffff; }
 
 .description {
-  width: 600px;
+  width: 100%;
   margin: 1em;
   font-size: 16px;
   color: #ffffff; }
@@ -199,21 +202,76 @@ ul.carousel {
   display: flex;
   justify-content: space-evenly; }
 
-.favorite {
-  color: #ffffff;
-  font-size: 24px;
-  cursor: pointer; }
+.movie-like, .top-movie-like {
+  color: #fff;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  transition: all .2s;
+  display: flex; }
 
-.icon-swap #favorited, .icon-swap #favorited2 {
-  display: none; }
+.movie-like:hover, .top-movie-like:hover {
+  transform: scale(1.07); }
+
+.movie-like:focus, .top-movie-like:focus {
+  outline: none; }
+
+.movie-like svg, .movie-watch a i, .top-movie-like svg, .top-movie-watch a i {
+  height: 2rem;
+  width: 2rem;
+  fill: #fff;
+  font-size: 30px; }
 
 .watchlist {
   color: #ffffff;
   font-size: 24px;
   cursor: pointer; }
 
-.icon-swap #watch {
+.alternate-pages-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px; }
+
+.favorite-page-btn {
+  border: 1px solid #86C232;
+  background-color: #000000;
+  font-size: 15px;
+  padding: 5px; }
+
+.favorite-page {
   display: none; }
+
+.display {
+  display: block;
+  background-color: #61892F;
+  width: 353px;
+  margin: auto; }
+
+.favorite-page-title {
+  margin: 0;
+  padding: 1rem;
+  text-align: center; }
+
+.favorites-list {
+  list-style: none;
+  padding: 0; }
+
+.favorite-container {
+  border: 1px solid #86C232;
+  background-color: #6B6E70;
+  width: 85%;
+  text-align: center;
+  margin: 10px auto; }
+
+.favorites-link {
+  text-decoration: none;
+  color: #000000; }
+
+.favorites-title {
+  margin: 10px 0; }
 
 html, body {
   box-sizing: border-box;
