@@ -167,13 +167,13 @@ ul.carousel {
   opacity: 1 !important;
   transition: opacity 1s 1s ease-out; }
 
-.movie-details1, .movie-details2 {
+.movie-details1, .movie-details2, .tv-details1, .tv-details2 {
   position: absolute;
   display: inline-flex;
   opacity: 0;
   transition: opacity 1s ease-out; }
 
-.movie-poster {
+.movie-poster, .tv-poster {
   height: 165px;
   width: 302px;
   background-color: #222629; }
@@ -182,10 +182,10 @@ ul.carousel {
   position: relative;
   margin-top: 1em; }
 
-.movie-name {
+.movie-name, .show-name {
   text-transform: uppercase; }
 
-.movie-name, .runTime {
+.movie-name, .runTime, .show-name {
   color: #ffffff; }
 
 .description {
@@ -202,7 +202,7 @@ ul.carousel {
   display: flex;
   justify-content: space-evenly; }
 
-.movie-like, .top-movie-like {
+.movie-like, .top-movie-like, .tv-like {
   color: #fff;
   padding: 0;
   background-color: transparent;
@@ -213,13 +213,13 @@ ul.carousel {
   transition: all .2s;
   display: flex; }
 
-.movie-like:hover, .top-movie-like:hover {
+.movie-like:hover, .top-movie-like:hover, .tv-like:hover, .top-tv-like:hover {
   transform: scale(1.07); }
 
-.movie-like:focus, .top-movie-like:focus {
+.movie-like:focus, .top-movie-like:focus, .tv-like:focus .top-tv-like:focus {
   outline: none; }
 
-.movie-like svg, .movie-watch a i, .top-movie-like svg, .top-movie-watch a i {
+.movie-like svg, .top-movie-like svg, .tv-like svg, .top-tv-like svg {
   height: 2rem;
   width: 2rem;
   fill: #fff;
