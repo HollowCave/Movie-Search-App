@@ -202,7 +202,7 @@ ul.carousel {
   display: flex;
   justify-content: space-evenly; }
 
-.movie-like, .top-movie-like, .tv-like {
+.movie-like, .top-movie-like, .tv-like, .top-tv-like {
   color: #fff;
   padding: 0;
   background-color: transparent;
@@ -230,6 +230,12 @@ ul.carousel {
   font-size: 24px;
   cursor: pointer; }
 
+.favorited-watched {
+  display: flex;
+  justify-content: space-evenly;
+  width: 65%;
+  margin: 75px auto auto; }
+
 .alternate-pages-container {
   width: 100%;
   text-align: center;
@@ -246,9 +252,7 @@ ul.carousel {
 
 .display {
   display: block;
-  background-color: #61892F;
-  width: 353px;
-  margin: auto; }
+  width: 353px; }
 
 .favorite-page-title {
   margin: 0;
@@ -261,7 +265,7 @@ ul.carousel {
 
 .favorite-container {
   border: 1px solid #86C232;
-  background-color: #6B6E70;
+  background-color: #000000;
   width: 85%;
   text-align: center;
   margin: 10px auto; }
@@ -271,7 +275,27 @@ ul.carousel {
   color: #000000; }
 
 .favorites-title {
+  color: #ffffff;
   margin: 10px 0; }
+
+@media (max-width: 1100px) {
+  .favorited-watched {
+    width: 100%; } }
+
+.about-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+  width: 100%; }
+
+.about-text-wrapper {
+  background-color: #000000;
+  border: 2px solid #61892F;
+  color: #ffffff;
+  width: 30%;
+  height: 30%;
+  text-align: center; }
 
 html, body {
   box-sizing: border-box;
